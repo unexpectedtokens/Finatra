@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Yesteryear&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  background: #e8e1e9;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 16px;
+  z-index: 1;
+  position: relative;
+  font-family: "Lato";
+  .container {
+    width: 80%;
+    margin: 30px 10%;
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.5s;
+      position: absolute;
+    }
+    .fade-enter,
+    .fade-leave-to {
+      opacity: 0;
+    }
+  }
+}
+#app::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 60vh;
+  height: 60vh;
+  border-radius: 50%;
+  background: linear-gradient(
+    rgba(255, 192, 203, 0.644),
+    rgba(240, 128, 128, 0.651)
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+@import "Layout/Header.scss";
