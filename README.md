@@ -1,0 +1,2 @@
+# Finatra
+Finance tracking app
