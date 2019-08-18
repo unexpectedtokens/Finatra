@@ -1,0 +1,108 @@
+.dashboard {
+  h2 {
+    font-weight: 700;
+  }
+  .dashcontainer {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .cardcontainer {
+      position: relative;
+      .card {
+        width: 90%;
+        height: 250px;
+        background: linear-gradient(#fc85a2, #f9a0a4);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-start;
+        align-items: stretch;
+        color: #fff;
+        border-radius: 15px;
+        position: relative;
+        flex-wrap: wrap;
+        box-shadow: 0px 8px 20px #555;
+        transition: box-shadow 0.3s;
+        margin-bottom: 80px;
+        &:hover {
+          box-shadow: 0px 8px 10px #555;
+        }
+        .balance {
+          font-size: 4em;
+          margin-left: 20px;
+          &.red {
+            color: #fc3d53;
+          }
+          .currency {
+            font-size: 0.5em;
+            margin-right: 10px;
+          }
+        }
+        .name {
+          margin-left: 20px;
+          justify-self: flex-end;
+        }
+        .masterdots {
+          position: absolute;
+          bottom: 50px;
+          right: 100px;
+        }
+        .masterdots::after {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background: #fec156;
+          position: absolute;
+          border-radius: 50%;
+        }
+        .masterdots::before {
+          content: "";
+          width: 30px;
+          height: 30px;
+          background: #fc3d53;
+          position: absolute;
+          border-radius: 50%;
+          transform: translateX(-70%);
+        }
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 50px;
+        background: linear-gradient(#49313f, #6a4f5e);
+        right: 0;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+    .recent {
+      margin-top: 20px;
+      background: #fff;
+      box-sizing: border-box;
+      color: #999;
+      font-size: 0.8em;
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      box-shadow: 0px 8px 10px #555;
+      transition: box-shadow 0.3s;
+      &:hover {
+        box-shadow: 0px 8px 5px #555;
+      }
+      .red {
+        color: #fc3d53;
+        font-size: 1.3em;
+        padding-bottom: 10px;
+      }
+      .clear {
+        font-size: 1.3em;
+        padding-bottom: 10px;
+        color: rgb(71, 141, 71);
+      }
+    }
+  }
+}

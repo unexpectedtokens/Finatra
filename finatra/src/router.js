@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Login from "./views/Login.vue";
+import Register from "./views/Register.vue";
 import Dashboard from "./views/Dashboard.vue";
 import Expenses from "./views/Expenses.vue";
 import Income from "./views/Income.vue";
@@ -31,9 +32,15 @@ export default new Router({
       exact: true
     },
     {
-      path: "/budget",
+      path: "/login",
       name: "Login",
       component: Login,
+      exact: true
+    },
+    {
+      path: "/register",
+      name: "Register",
+      component: Register,
       exact: true
     }
     // {

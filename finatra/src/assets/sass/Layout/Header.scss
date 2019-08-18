@@ -1,13 +1,15 @@
 header {
   width: 100%;
   padding: 20px;
+  box-sizing: border-box;
   h1 {
     font-family: "Yesteryear", cursive;
     font-size: 3em;
-    color: rgb(230, 140, 140);
+    color: #fb86a2;
     text-align: center;
     transition: color 0.3s;
     text-decoration: underline;
+    cursor: pointer;
     &:hover {
       color: rgb(233, 163, 163);
     }
@@ -17,12 +19,13 @@ header {
     text-align: center;
     a {
       padding: 10px 20px;
-      color: #555;
+      color: #7e818e;
       margin-right: 50px;
       text-decoration: none;
       border-radius: 20px;
       transition: background 0.3s;
       z-index: 20;
+      cursor: pointer;
       &:hover {
         background: #fff;
       }
