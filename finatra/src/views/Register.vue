@@ -55,11 +55,11 @@ export default {
   },
   mounted() {
     this.$refs.email.focus();
-    this.addEventListener("keyup", this.handleEnterClick);
+    document.addEventListener("keyup", this.handleEnterClick);
     this.$store.commit("unauthorize");
   },
   beforeDestroy() {
-    this.removeEventListener("keyup", this.handleEnterClick);
+    document.removeEventListener("keyup", this.handleEnterClick);
   }
 };
 </script>
