@@ -5,5 +5,5 @@ app.use(express.static(path.resolve(__dirname, "./finatra/dist/")));
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./finatra/dist/index.html"));
 });
-app.listen(3000, () => console.log("yes"));
+app.listen(process.env.PORT, () => console.log("yes"));
 console.log(path.resolve(__dirname, "./finatra/dist"));
