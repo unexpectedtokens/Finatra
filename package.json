@@ -1,0 +1,24 @@
+{
+  "name": "Finatra",
+  "version": "1.0.0",
+  "description": "Finance tracking app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unexpectedtokens/Finatra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unexpectedtokens/Finatra/issues"
+  },
+  "homepage": "https://github.com/unexpectedtokens/Finatra#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
