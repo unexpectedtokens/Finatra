@@ -4,7 +4,7 @@
     <div class="dashcontainer">
       <div class="cardcontainer">
         <div class="card">
-          <p>balance</p>
+          <p>Balance</p>
           <p class="balance" :class="(total > 0) ? '': 'red'">
             <span class="currency">{{currency}}</span>
             {{total}}

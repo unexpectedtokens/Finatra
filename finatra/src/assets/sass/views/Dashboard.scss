@@ -130,12 +130,28 @@
         a {
           text-align: center;
         }
+
         p:last-of-type {
           font-size: 2em;
           span {
             font-size: 0.7em;
           }
         }
+      }
+      .one,
+      .two,
+      .three,
+      .more {
+        transition: transform 0.3s;
+        p:first-of-type {
+          letter-spacing: 2px;
+        }
+      }
+      .one:hover,
+      .two:hover,
+      .three:hover,
+      .more:hover {
+        transform: scale(1.1);
       }
       .one {
         width: 250px;
