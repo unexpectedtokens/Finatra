@@ -8,7 +8,29 @@ export default new Vuex.Store({
     user: {},
     currency: "dollar",
     balance: 0,
-    //dummy changes
+    //dummy data
+    budget: [
+      {
+        title: "rent",
+        amount: 500,
+        exact: true
+      },
+      {
+        title: "rent",
+        amount: 500,
+        exact: true
+      },
+      {
+        title: "rent",
+        amount: 500,
+        exact: true
+      },
+      {
+        title: "rent",
+        amount: 500,
+        exact: true
+      }
+    ],
     changes: [
       {
         type: "DEC",
@@ -215,7 +237,8 @@ export default new Vuex.Store({
         .sort((a, b) => {
           return b.amount - a.amount;
         });
-    }
+    },
+    getBudgetItems: state => state.budget
   },
   mutations: {
     authenticate: (state, { username }) => {
@@ -226,6 +249,9 @@ export default new Vuex.Store({
     },
     unauthorize: state => {
       state.authenticated = false;
+    },
+    DELETE: (state, index) => {
+      state.budget.splice(index, 1);
     }
   },
   actions: {
@@ -240,6 +266,10 @@ export default new Vuex.Store({
         commit("authenticate", { username: payload.username });
         resolve("logged in");
       });
+    },
+    DELETE: ({ commit }, payload) => {
+      //WILL BE ASYNC CALL TO API IN THE FUTURE THAT'S WHY IT's AN ACTION AND NOT JUST A MUTATOR
+      commit("DELETE", payload);
     }
   }
 });

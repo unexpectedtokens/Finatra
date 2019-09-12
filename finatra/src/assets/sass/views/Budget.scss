@@ -1,0 +1,28 @@
+.budget {
+  .budget-item-container {
+    width: 100%;
+    padding-top: 50px;
+    overflow: scroll;
+    max-height: 550px;
+    li {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background: #efefef;
+      margin: 15px 0;
+      border-radius: 8px;
+      p,
+      h5 {
+        margin-bottom: 10px;
+      }
+      h5 {
+        font-size: 1.5em;
+        font-weight: 200;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .budget-item-container::-webkit-scrollbar {
+    width: 0px;
+  }
+}

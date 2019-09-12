@@ -5,6 +5,7 @@ import Register from "./views/Register.vue";
 import Dashboard from "./views/Dashboard.vue";
 import Expenses from "./views/Expenses.vue";
 import Income from "./views/Income.vue";
+import Budget from "./views/Budget.vue";
 // import Expenses from "./views/Expenses.vue"
 
 Vue.use(Router);
@@ -41,6 +42,12 @@ export default new Router({
       path: "/register",
       name: "Register",
       component: Register,
+      exact: true
+    },
+    {
+      path: "/budget",
+      name: "Budget",
+      component: Budget,
       exact: true
     }
     // {
