@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <div class="form add_new">
     <div class="form-group">
       <input type="number" v-model="amount" placeholder="Amount" />
     </div>
@@ -14,20 +14,22 @@
 export default {
   data() {
     return {
-      amount: "",
+      amount: null,
       category: ""
     };
   },
   props: {
-    type: String
+    type: String,
+    Submit: Function
   },
   methods: {
     submit() {
       this.$store.dispatch("newChange", {
         type: this.type,
-        amount: this.amount,
+        amount: parseFloat(this.amount),
         category: this.category
       });
+      this.Submit();
     }
   }
 };

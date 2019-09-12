@@ -10,7 +10,7 @@
       ></List>
       <NewItem
         v-else
-        :Submit="submit"
+        :Submit="changePage"
         :amount="amount"
         :category="category"
         @changeData="handleNewData($event)"

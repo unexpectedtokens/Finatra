@@ -65,14 +65,6 @@ export default {
     },
     total() {
       const totalPrice = this.$store.getters.getTotal.toFixed(2);
-      // const interval = setInterval(() => {
-      //   if (this.total < totalPrice) {
-      //     this.total += 200;
-      //   } else {
-      //     clearInterval(interval);
-      //   }
-      // }, 0.0001);
-      // console.log(totalPrice);
       return totalPrice;
     },
     username() {

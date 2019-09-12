@@ -8,7 +8,7 @@
         :returnProperDate="returnProperDate"
         :changeFilter="changeFilter"
       ></List>
-      <NewItem v-else></NewItem>
+      <NewItem v-else :Submit="changePage" :type="'INC'"></NewItem>
     </transition>
     <NewButton :clicked="changePage" :neutral="page"></NewButton>
   </div>

@@ -197,15 +197,11 @@ export default new Vuex.Store({
     //GETTER TO GET THE BIGGEST THREE EXPENSES DISPLAYED ON THE DASHBOARD
     getBiggestExpenses: state => {
       const catArr = [...state.changes.filter(change => change.type === "DEC")];
-      const categories = {
-        electronics: 0,
-        services: 0,
-        travel: 0,
-        fooddrinks: 0,
-        clothing: 0,
-        leisure: 0
-      };
+      const categories = {};
       catArr.forEach(cat => {
+        if (!categories[cat.category]) {
+          categories[cat.category] = 0;
+        }
         categories[cat.category] += cat.amount;
       });
       return Object.keys(categories)
