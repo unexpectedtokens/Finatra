@@ -226,6 +226,9 @@ export default new Vuex.Store({
     },
     unauthorize: state => {
       state.authenticated = false;
+    },
+    newChange: (state, payload) => {
+      state.changes.push(payload);
     }
   },
   actions: {
@@ -239,6 +242,17 @@ export default new Vuex.Store({
       return new Promise(resolve => {
         commit("authenticate", { username: payload.username });
         resolve("logged in");
+      });
+    },
+    newChange: ({ commit }, { type, amount, category }) => {
+      return new Promise((resolve, reject) => {
+        const change = {
+          type,
+          amount,
+          category,
+          timestamp: Date.now()
+        };
+        commit("newChange", change);
       });
     }
   }

@@ -1,13 +1,22 @@
 <template>
   <div class="expenses">
     <h2>Expenses</h2>
-    <List
-      :dataList="expenses"
-      v-if="page==='default'"
-      :returnProperDate="returnProperDate"
-      :changeFilter="changeFilter"
-    ></List>
-    <NewItem v-else></NewItem>
+    <transition name="fade">
+      <List
+        :dataList="expenses"
+        v-if="page==='default'"
+        :returnProperDate="returnProperDate"
+        :changeFilter="changeFilter"
+      ></List>
+      <NewItem
+        v-else
+        :Submit="submit"
+        :amount="amount"
+        :category="category"
+        @changeData="handleNewData($event)"
+        :type="'DEC'"
+      ></NewItem>
+    </transition>
     <NewButton :clicked="changePage" :neutral="page"></NewButton>
   </div>
 </template>
@@ -26,7 +35,9 @@ export default {
   data() {
     return {
       filterBy: "timestamp",
-      page: "default"
+      page: "default",
+      amount: 0,
+      category: ""
     };
   },
   computed: {
@@ -43,6 +54,9 @@ export default {
     }
   },
   methods: {
+    handleNewData(data) {
+      console.log(e);
+    },
     returnProperDate(stamp) {
       const d = new Date(stamp);
       const day = d.getDate();
