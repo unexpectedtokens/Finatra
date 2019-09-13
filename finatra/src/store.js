@@ -219,15 +219,11 @@ export default new Vuex.Store({
     //GETTER TO GET THE BIGGEST THREE EXPENSES DISPLAYED ON THE DASHBOARD
     getBiggestExpenses: state => {
       const catArr = [...state.changes.filter(change => change.type === "DEC")];
-      const categories = {
-        electronics: 0,
-        services: 0,
-        travel: 0,
-        fooddrinks: 0,
-        clothing: 0,
-        leisure: 0
-      };
+      const categories = {};
       catArr.forEach(cat => {
+        if (!categories[cat.category]) {
+          categories[cat.category] = 0;
+        }
         categories[cat.category] += cat.amount;
       });
       return Object.keys(categories)
@@ -252,6 +248,9 @@ export default new Vuex.Store({
     },
     DELETE: (state, index) => {
       state.budget.splice(index, 1);
+    },
+    newChange: (state, change) => {
+      state.changes.push(change);
     }
   },
   actions: {
@@ -270,6 +269,18 @@ export default new Vuex.Store({
     DELETE: ({ commit }, payload) => {
       //WILL BE ASYNC CALL TO API IN THE FUTURE THAT'S WHY IT's AN ACTION AND NOT JUST A MUTATOR
       commit("DELETE", payload);
+    },
+    newChange: ({ commit }, { type, amount, category }) => {
+      return new Promise((resolve, reject) => {
+        const change = {
+          type,
+          amount,
+          category,
+          timestamp: Date.now()
+        };
+        commit("newChange", change);
+        return resolve(reject);
+      });
     }
   }
 });

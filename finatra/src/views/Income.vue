@@ -1,13 +1,15 @@
 <template>
   <div class="expenses">
     <h2>Income</h2>
-    <List
-      :dataList="income"
-      v-if="page==='default'"
-      :returnProperDate="returnProperDate"
-      :changeFilter="changeFilter"
-    ></List>
-    <NewItem v-else></NewItem>
+    <transition name="fade">
+      <List
+        :dataList="income"
+        v-if="page==='default'"
+        :returnProperDate="returnProperDate"
+        :changeFilter="changeFilter"
+      ></List>
+      <NewItem v-else :Submit="changePage" :type="'INC'"></NewItem>
+    </transition>
     <NewButton :clicked="changePage" :neutral="page"></NewButton>
   </div>
 </template>
