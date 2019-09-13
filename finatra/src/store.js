@@ -9,188 +9,164 @@ export default new Vuex.Store({
     currency: "dollar",
     balance: 0,
     //dummy data
-    budget: [
-      {
-        title: "rent",
-        amount: 500,
-        exact: true
-      },
-      {
-        title: "rent",
-        amount: 500,
-        exact: true
-      },
-      {
-        title: "rent",
-        amount: 500,
-        exact: true
-      },
-      {
-        title: "rent",
-        amount: 500,
-        exact: true
-      }
-    ],
+    budget: [],
     changes: [
       {
         type: "DEC",
-        amount: 1.75,
+        amount: 0,
         timestamp: Date.now() - 2000000000,
-        category: "electronics"
+        category: "food&drink"
       },
       {
-        type: "INC",
-        amount: 155,
+        type: "DEC",
+        amount: 0,
         timestamp: Date.now() - 10000000000,
-        category: "salary"
+        category: "rent"
       },
       {
-        type: "INC",
-        amount: 155,
+        type: "DEC",
+        amount: 0,
         timestamp: Date.now() - 10000000000,
-        category: "reimbursement"
-      },
-      {
-        type: "DEC",
-        amount: 155,
-        timestamp: Date.now() - 10000000,
-        category: "electronics"
-      },
-      {
-        type: "DEC",
-        amount: 1.75,
-        timestamp: Date.now() - 500,
-        category: "salary"
-      },
-      {
-        type: "INC",
-        amount: 4999.12,
-        timestamp: Date.now(),
-        category: "salary"
-      },
-      {
-        type: "DEC",
-        amount: 571.22,
-        timestamp: Date.now() - 5,
-        category: "travel"
-      },
-      {
-        type: "DEC",
-        amount: 1.75,
-        timestamp: Date.now() - 2000000000,
-        category: "electronics"
-      },
-      {
-        type: "INC",
-        amount: 155,
-        timestamp: Date.now() - 10000000000,
-        category: "salary"
-      },
-      {
-        type: "INC",
-        amount: 155,
-        timestamp: Date.now() - 10000000000,
-        category: "salary"
-      },
-      {
-        type: "DEC",
-        amount: 155,
-        timestamp: Date.now() - 10000000,
-        category: "electronics"
-      },
-
-      {
-        type: "DEC",
-        amount: 571.22,
-        timestamp: Date.now() - 5,
-        category: "travel"
-      },
-      {
-        type: "DEC",
-        amount: 1.75,
-        timestamp: Date.now() - 2000000000,
-        category: "electronics"
-      },
-      {
-        type: "INC",
-        amount: 155,
-        timestamp: Date.now() - 10000000000,
-        category: "salary"
-      },
-      {
-        type: "INC",
-        amount: 155,
-        timestamp: Date.now() - 10000000000,
-        category: "salary"
-      },
-      {
-        type: "DEC",
-        amount: 155,
-        timestamp: Date.now() - 10000000,
-        category: "electronics"
-      },
-      {
-        type: "DEC",
-        amount: 1.75,
-        timestamp: Date.now() - 500,
-
-        category: "salary"
-      },
-      {
-        type: "INC",
-        amount: 4999.12,
-        timestamp: Date.now(),
-
-        category: "salary"
-      },
-      {
-        type: "DEC",
-        amount: 571.22,
-        timestamp: Date.now() - 5,
-        category: "travel"
-      },
-      {
-        type: "DEC",
-        amount: 1.75,
-        timestamp: Date.now() - 2000000000,
-        category: "electronics"
-      },
-      {
-        type: "INC",
-        amount: 155,
-        timestamp: Date.now() - 10000000000,
-        category: "salary"
-      },
-      {
-        type: "INC",
-        amount: 155,
-        timestamp: Date.now() - 10000000000,
-        category: "salary"
-      },
-      {
-        type: "DEC",
-        amount: 155,
-        timestamp: Date.now() - 10000000,
-        category: "electronics"
-      },
-      {
-        type: "DEC",
-        amount: 1.75,
-        timestamp: Date.now() - 500,
-        category: "electronics"
-      },
-      {
-        type: "INC",
-        amount: 4999.12,
-        timestamp: Date.now(),
-        category: "salary"
-      },
-      {
-        type: "DEC",
-        amount: 571.22,
-        timestamp: Date.now() - 5,
-        category: "travel"
+        category: "movies"
       }
+      //   {
+      //     type: "DEC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 1.75,
+      //     timestamp: Date.now() - 500,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 4999.12,
+      //     timestamp: Date.now(),
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 571.22,
+      //     timestamp: Date.now() - 5,
+      //     category: "travel"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 1.75,
+      //     timestamp: Date.now() - 2000000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000000,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000000,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 571.22,
+      //     timestamp: Date.now() - 5,
+      //     category: "travel"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 1.75,
+      //     timestamp: Date.now() - 2000000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000000,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000000,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 1.75,
+      //     timestamp: Date.now() - 500,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 4999.12,
+      //     timestamp: Date.now(),
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 571.22,
+      //     timestamp: Date.now() - 5,
+      //     category: "travel"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 1.75,
+      //     timestamp: Date.now() - 2000000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000000,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000000,
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 155,
+      //     timestamp: Date.now() - 10000000,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 1.75,
+      //     timestamp: Date.now() - 500,
+      //     category: "electronics"
+      //   },
+      //   {
+      //     type: "INC",
+      //     amount: 4999.12,
+      //     timestamp: Date.now(),
+      //     category: "salary"
+      //   },
+      //   {
+      //     type: "DEC",
+      //     amount: 571.22,
+      //     timestamp: Date.now() - 5,
+      //     category: "travel"
+      //   }
     ]
   },
   getters: {
@@ -251,6 +227,9 @@ export default new Vuex.Store({
     },
     newChange: (state, change) => {
       state.changes.push(change);
+    },
+    addNewBudgetItem: (state, { title, amount, exact }) => {
+      state.budget.push({ title, amount, exact });
     }
   },
   actions: {
@@ -280,6 +259,12 @@ export default new Vuex.Store({
         };
         commit("newChange", change);
         return resolve(reject);
+      });
+    },
+    newBudgetItem: ({ commit }, { title, amount, exact }) => {
+      return new Promise(resolve => {
+        resolve("hell yes");
+        commit("addNewBudgetItem", { title, amount, exact });
       });
     }
   }

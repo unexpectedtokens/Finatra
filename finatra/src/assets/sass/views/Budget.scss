@@ -25,4 +25,24 @@
   .budget-item-container::-webkit-scrollbar {
     width: 0px;
   }
+  .submit {
+    width: 300px;
+    align-self: center;
+    margin-top: 20px;
+    border: none;
+    background: lightcoral;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 15px;
+    transition: background 0.3s;
+    \margin: 0 auto;
+    cursor: pointer;
+    &:hover {
+      background: rgb(212, 110, 110);
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
 }
